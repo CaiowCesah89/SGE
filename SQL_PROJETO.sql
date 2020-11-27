@@ -9551,3 +9551,6 @@ insert into bairros(baidescricao, baicidcodigo) values ('Adrianópolis', 236),
 ('Vila Buriti', 236),
 ('Vila da Prata', 236),
 ('Zumbi dos Palmares', 236);
+
+insert into usuarios(usulogin, ususenha, usustatus) values('adm', '$2y$10$QLdULmjPKkvuX5rZHY6W0uzinV9X68g0LdEeglOF0WqdydAXV.kZ6', 'Ativo');
+insert into funcionarios(funnome, funcpf, fundtnascimento, funestcodigo, funcidcodigo, funbaicodigo, funendereco, funsexo, funstatus, funusucodigo) values('Administrador', '123.456.789-10', '1111-11-11', 3, 236, 42, 'Rua 1 Nº1', 'Masculino', 'Ativo', 1);
