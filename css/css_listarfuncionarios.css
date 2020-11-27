@@ -16,12 +16,22 @@ td{
 	font-weight: bold;//deixa a fonte em negrito
 }
 
+
 .button{
-	background-color: #7a91c1;
-	font-weight: bold;
-	border-radius: 7px;
-	padding: 5px;
-	font-family: "Comic Sans MS";
-	font-size: 12px;
-	box-shadow: 7px 7px 7px;
+    	color: #7a91c1;
+    	font-family: "Comic Sans MS";
+    	margin-top: 10px;
+    	margin-bottom: 10px;
+    	margin-left: 10px;
+    	float: right;
+    	border-radius: 8px;
+    	height: 30px;
+    	box-shadow: 5px 5px 5px #111;
 }
+
+.button:hover{
+    	padding: 5px;
+    	font-family: "Comic Sans MS";
+    	background-color: #7a91c1;
+    	color: white;
+    }
