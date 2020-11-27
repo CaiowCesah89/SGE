@@ -27,8 +27,8 @@ if ($linhas>0) {
 	$_SESSION['nome']=$nome;
 	$_SESSION['sexo']=$sexo;
 	if($_SESSION['status']=="Inativo"){
-		echo "<script>alert('Usuário Inativo.\n Favor procurar o administrador do sistema!');</script>";
-		echo "<script>location='../index.php';</script>";
+		echo "<script> alert('Usuário Inativo. Favor procurar o administrador do sistema!');</script>";
+		header("refresh: 0; url=http://localhost:8090/index.php");
 	}else if(password_verify($senha, $senha_db)){
 		if (($_SESSION['login']=="$login")&&($_SESSION['senha']=="$senha_db")) {
 			header("Location:../view/home.php");

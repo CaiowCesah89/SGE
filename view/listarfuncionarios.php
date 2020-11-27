@@ -39,7 +39,7 @@ include "../functions/funcoes.php";
 					<td class="tdcenter">STATUS</td>
 					<td class="tdcenter">EDITAR</td>
 					<td class="tdcenter">EXCLUIR</td>
-					<td class="tdcenter">DESATIVAR</td>
+					<td class="tdcenter">DESATIVAR / ATIVAR</td>
 				</tr>
 				<tr>
 					<?php

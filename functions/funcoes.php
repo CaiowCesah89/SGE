@@ -46,32 +46,32 @@ function pesquisaTodosFuncionarios(){
 		$status = $dados['usustatus'];
 
 		if($status == 'Inativo'){
-			echo ("<tr>
-				<td class='td1'>".$codigo."</td>
-				<td class='td1'>".$nome."</td>
-				<td class='td1'>".$cpf."</td>
-				<td class='td1'>".$sexo."</td>
-				<td class='td1'>".$login."</td>
-				<td class='td1'>".$status."</td>
+			echo ("<tr bgcolor='#c87e7e'>
+				<td class='td'>".$codigo."</td>
+				<td class='td'>".$nome."</td>
+				<td class='td'>".$cpf."</td>
+				<td class='td'>".$sexo."</td>
+				<td class='td'>".$login."</td>
+				<td class='td'>".$status."</td>
 
 				<form action='' method='POST'>
-				<td class='td1'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
-				<td class='td1'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
-				<td class='td1'><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar este usuário no sistema' border='0'></a></td>
+				<td class='td'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar usuário' border='0'></a> -- <a href='../controller/controller_ativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_ativar.png' title='Ativar usuário' border='0'></a></td>
 				</tr>");
 		}else{
 			echo ("<tr>
-				<td>".$codigo."</td>
-				<td>".$nome."</td>
-				<td>".$cpf."</td>
-				<td>".$sexo."</td>
-				<td>".$login."</td>
-				<td>".$status."</td>
+				<td class='td'>".$codigo."</td>
+				<td class='td'>".$nome."</td>
+				<td class='td'>".$cpf."</td>
+				<td class='td'>".$sexo."</td>
+				<td class='td'>".$login."</td>
+				<td class='td'>".$status."</td>
 
 				<form action='' method='POST'>
-				<td><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
-				<td><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
-				<td><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar este usuário no sistema' border='0'></a></td>
+				<td class='td'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar usuário' border='0'></a> -- <a href='../controller/controller_ativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_ativar.png' title='Ativar usuário' border='0'></a></td>
 				</tr>");
 		}
 	}
@@ -89,32 +89,32 @@ function pesquisaFuncionarioByLikeNome($nome){
 		$status = $dados['usustatus'];
 
 		if($status == 'Inativo'){
-			echo ("<tr>
-				<td class='td1'>".$codigo."</td>
-				<td class='td1'>".$nome."</td>
-				<td class='td1'>".$cpf."</td>
-				<td class='td1'>".$sexo."</td>
-				<td class='td1'>".$login."</td>
-				<td class='td1'>".$status."</td>
+			echo ("<tr bgcolor='#c87e7e'>
+				<td class='td'>".$codigo."</td>
+				<td class='td'>".$nome."</td>
+				<td class='td'>".$cpf."</td>
+				<td class='td'>".$sexo."</td>
+				<td class='td'>".$login."</td>
+				<td class='td'>".$status."</td>
 
 				<form action='' method='POST'>
-				<td class='td1'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
-				<td class='td1'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
-				<td ><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar usuário' border='0'></a> <a href='../controller/controller_ativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_ativar.png' title='Ativar usuário' border='0'></a></td>
+				<td class='td'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar usuário' border='0'></a> -- <a href='../controller/controller_ativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_ativar.png' title='Ativar usuário' border='0'></a></td>
 				</tr>");
 		}else{
 			echo ("<tr>
-				<td>".$codigo."</td>
-				<td>".$nome."</td>
-				<td>".$cpf."</td>
-				<td>".$sexo."</td>
-				<td>".$login."</td>
-				<td>".$status."</td>
+				<td class='td'>".$codigo."</td>
+				<td class='td'>".$nome."</td>
+				<td class='td'>".$cpf."</td>
+				<td class='td'>".$sexo."</td>
+				<td class='td'>".$login."</td>
+				<td class='td'>".$status."</td>
 
 				<form action='' method='POST'>
-				<td><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
-				<td><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
-				<td><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar usuário' border='0'></a> <a href='../controller/controller_ativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_ativar.png' title='Ativar usuário' border='0'></a></td>
+				<td class='td'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$codigo."'><img src='../imagens/bt_editar.png' title='Editar dados do funcionário' name='Alterar' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$codigo."'><img src='../imagens/bt_dropar.png' title='Excluir funcionário do sistema' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_desativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_desativar.png' title='Desativar usuário' border='0'></a> -- <a href='../controller/controller_ativarusuario.php?funcodigo=".$codigo."'><img src='../imagens/bt_ativar.png' title='Ativar usuário' border='0'></a></td>
 				</tr>");
 		}
 	}
