@@ -47,21 +47,3 @@ function FormataCpf(campo, teclapres){
           campo.value = "";
         }
     }
-
-function numeros(){
-    
-        if (document.all) // Internet Explorer
-        var tecla = event.keyCode;
-        else if(document.layers) // Nestcape
-        var tecla = e.which;
-        
-        if ((tecla > 47 && tecla < 58)) // numeros de 0 a 9
-        return true;
-        else {
-            if (tecla != 8) // backspace
-                //event.keyCode = 0;
-            return false;
-            else
-                return true;
-        }
-    }

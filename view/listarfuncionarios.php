@@ -14,7 +14,7 @@ include "../functions/funcoes.php";
 	<?php
 	require_once '../view/cabecalho.php';
 	?>
-	<form class="form" name="formlistarfuncionarios" action="?acao=Excluir" method="post" accept-charset="utf-8">
+	<form class="form" name="formlistarfuncionarios" action="" method="post" accept-charset="utf-8">
 		<table>
 			
 			<thead>
@@ -24,7 +24,7 @@ include "../functions/funcoes.php";
 			</thead>
 			<tbody>
 				<tr align="right">
-					<td colspan="8"><label>INFORME NOME OU CPF:</label><input type="text" name="txtpesqfuncionario" size="70" autofocus="txtpesqfuncionario"></td>
+					<td colspan="8"><label>INFORME NOME OU CPF:</label><input type="text" class="input" name="txtpesqfuncionario" size="70" autofocus="txtpesqfuncionario"></td>
 					<td><input class="button" type="submit" name="btpesqfuncionario" value="PESQUISAR"></td>
 				</tr>
 				<tr><td colspan="9"></td></tr>
@@ -54,7 +54,7 @@ include "../functions/funcoes.php";
 			</tbody>
 			<footer>
 				<tfoot>
-					<tr align="right"><td colspan="9"><input class="button" type="button" name="Voltar" value="VOLTAR" onclick="location='http://localhost:8090/view/home.php';"></td></tr>
+					<tr align="right"><td colspan="9"><input class="button" type="button" name="Voltar" value="VOLTAR" onclick="location='http:../view/home.php';"></td></tr>
 				</tfoot>
 			</footer>
 			

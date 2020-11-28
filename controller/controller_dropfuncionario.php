@@ -22,14 +22,14 @@ if ($linhas>0) {
 		$linhas1= mysqli_affected_rows($conexao);
 
 		echo "<script> alert('Exclusão realizada com sucesso!');</script>";
-		header("refresh: 0; url=http://localhost:8090/view/listarfuncionarios.php");
+		header("refresh: 0; url=http:../view/listarfuncionarios.php");
 	}else{
 		echo "<script> alert('Exclusão não realizada, funcionário não encontrado!');</script>";
-		header("refresh: 0; url=http://localhost:8090/view/listarfuncionarios.php");
+		header("refresh: 0; url=http:../view/listarfuncionarios.php");
 	}
 	
 }else{
 	echo "<script> alert('Funcionário não encontrado!');</script>";
-	header("refresh: 0; url=http://localhost:8090/view/listarfuncionarios.php");
+	header("refresh: 0; url=http:../view/listarfuncionarios.php");
 }
 ?>

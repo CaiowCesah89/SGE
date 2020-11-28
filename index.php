@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="shortcut ico" href="../imagens/favicon.ico">
     <link type="text/css" rel="stylesheet" href="css/css_pg_login.css">
     <title>Parking</title>
 </head>

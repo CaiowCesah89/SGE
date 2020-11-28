@@ -15,7 +15,7 @@ $senha 			= $_POST['txtsenha'];
 
 if($nome == " " || $cpf == "" || $dtnascimento == "" || empty($estado) || empty($cidade) || empty($bairro) || $endereco == "" || $sexo == "" || $login == "" || $senha == ""){
 	echo "<script> alert('Não pode haver campos em branco.\n Você será redirecionado para a mesma página.');</script>";
-	header("refresh: 0; url=http://localhost:8090/view/cadfuncionario.php");
+	header("refresh: 0; url=http:../view/cadfuncionario.php");
 }else{
 
 	$senha_segura = password_hash($senha, PASSWORD_DEFAULT);
@@ -30,10 +30,10 @@ if($nome == " " || $cpf == "" || $dtnascimento == "" || empty($estado) || empty(
 
 	if ($linhas>0) {
 		echo "<script> alert('O usário informado já existe no banco de dados!');</script>";
-		header("refresh: 0; url=http://localhost:8090/view/cadfuncionario.php");
+		header("refresh: 0; url=http:../view/cadfuncionario.php");
 	}else if($linhas0>0){
 		echo "<script> alert('O CPF informado já existe no banco de dados!');</script>";
-		header("refresh: 0; url=http://localhost:8090/view/cadfuncionario.php");
+		header("refresh: 0; url=http:../view/cadfuncionario.php");
 	}else{
 
 		$sql1 = "insert into usuarios(usulogin, ususenha, usustatus) VALUES ('$login', '$senha_segura','Ativo');";
@@ -59,7 +59,7 @@ if($nome == " " || $cpf == "" || $dtnascimento == "" || empty($estado) || empty(
 			if($sql3){
 				$_SESSION['mensagem'] = "gravadocomsucesso";
 				echo "<script> alert('Salvo com sucesso!');</script>";
-				header("refresh: 0; url=http://localhost:8090/view/cadfuncionario.php");
+				header("refresh: 0; url=http:../view/cadfuncionario.php");
 			}else{
 				header('Location:../view/home.php');
 			}

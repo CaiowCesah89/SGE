@@ -78,7 +78,7 @@ include "../functions/funcoes.php";
 					<tr>
 						<td colspan="2" align="center">
 							<input class="submit" type="submit" name="btsalvar" value="SALVAR">
-							<input class="submit" type="button" name="btvoltar" value="VOLTAR" onclick="location='http://localhost:8090/view/home.php';">
+							<input class="submit" type="button" name="btvoltar" value="VOLTAR" onclick="location='http:../view/home.php';">
 							<input class="submit" type="reset" name="reset" value="LIMPAR">
 						</td>
 					</tr>

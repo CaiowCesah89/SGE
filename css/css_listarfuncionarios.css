@@ -1,5 +1,5 @@
 .form{
-	margin: 20px 250px 0px;
+	margin: 10px 150px 0px;
 	width: 80%;
 }
 
@@ -16,6 +16,13 @@ td{
 	font-weight: bold;//deixa a fonte em negrito
 }
 
+.input{
+	border-radius: 8px;
+	height: 20px;
+	background: none;
+	font-weight: bold;
+	font-size: 15px;
+}
 
 .button{
     	color: #7a91c1;
@@ -34,4 +41,5 @@ td{
     	font-family: "Comic Sans MS";
     	background-color: #7a91c1;
     	color: white;
+    	box-shadow: 5px 5px 5px #7a91c1;
     }
