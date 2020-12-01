@@ -7,7 +7,7 @@ function MontaSelectEstados(){
 	$sql = "select * from estados";
 	$query = mysqli_query(pegarConexao(),$sql);
 	while ($vetorestados = mysqli_fetch_array($query)){
-		echo "<option value='". $vetorestados['estcodigo']."'>".$vetorestados['estdescricao']."";
+		echo "<option value='". $vetorestados['estcodigo']."'>".$vetorestados['estdescricao']." </option>";
 	}
 	echo "</select>";
 }
@@ -18,7 +18,7 @@ function MontaSelectFabricantes(){
 	$sql = "select * from fabricantes";
 	$query = mysqli_query(pegarConexao(),$sql);
 	while ($vetorfabricantes = mysqli_fetch_array($query)){
-		echo "<option value='". $vetorfabricantes['fabcodigo']."'>".$vetorfabricantes['fabnome']."";
+		echo "<option value='". $vetorfabricantes['fabcodigo']."'>".$vetorfabricantes['fabnome']." </option>";
 	}
 	echo "</select>";
 }
@@ -133,30 +133,48 @@ function pesquisaFuncionarioByLikeNome($nome){
 
 function RecuperaSelectEstadosByCodigo($estcodigo){
 	echo "<select class='inputestado' name='txtestados' id='estados'>";
-	$sql = "select * from estados where estcodigo = $estcodigo;";
+	$sql = "select * from estados;";
 	$query = mysqli_query(pegarConexao(),$sql);
 	while ($vetorestados = mysqli_fetch_array($query)){
-		echo "<option value='". $vetorestados['estcodigo']."'>".$vetorestados['estdescricao']."";
+		$codigo = $vetorestados['estcodigo'];
+		$descricao = $vetorestados['estdescricao'];
+		if($codigo == $estcodigo){
+			echo "<option selected='selected' value='".$vetorestados['estcodigo']."'>".$vetorestados['estdescricao']."</option>";
+		}else{
+			echo "<option value='".$vetorestados['estcodigo']."'>".$vetorestados['estdescricao']."</option>";
+		}
 	}
 	echo "</select>";
 }
 
 function RecuperaSelectCidadesByCodigo($cidcodigo){
 	echo "<select class='inputestado' name='txtcidades' id='cidades'>";
-	$sql = "select * from cidades where cidcodigo = $cidcodigo;";
+	$sql = "select * from cidades;";
 	$query = mysqli_query(pegarConexao(),$sql);
 	while ($vetorcidades = mysqli_fetch_array($query)){
-		echo "<option value='". $vetorcidades['cidcodigo']."'>".$vetorcidades['ciddescricao']."";
+		$codigo = $vetorcidades['cidcodigo'];
+		$descricao = $vetorcidades['ciddescricao'];
+		if($codigo == $cidcodigo){
+			echo "<option selected='selected' value='".$vetorcidades['cidcodigo']."'>".$vetorcidades['ciddescricao']."</option>";
+		}else{
+			echo "<option value='".$vetorcidades['cidcodigo']."'>".$vetorcidades['ciddescricao']."</option>";
+		}
 	}
 	echo "</select>";
 }
 
 function RecuperaSelectBairrosByCodigo($baicodigo){
 	echo "<select class='inputestado' name='txtbairros' id='bairros'>";
-	$sql = "select * from bairros where baicodigo = $baicodigo;";
+	$sql = "select * from bairros;";
 	$query = mysqli_query(pegarConexao(),$sql);
 	while ($vetorbairros = mysqli_fetch_array($query)){
-		echo "<option value='". $vetorbairros['baicodigo']."'>".$vetorbairros['baidescricao']."";
+		$codigo = $vetorbairros['baicodigo'];
+		$descricao = $vetorbairros['baidescricao'];
+		if($codigo == $baicodigo){
+			echo "<option selected='selected' value='".$vetorbairros['baicodigo']."'>".$vetorbairros['baidescricao']."</option>";
+		}else{
+			echo "<option value='".$vetorbairros['baicodigo']."'>".$vetorbairros['baidescricao']."</option>";
+		}
 	}
 	echo "</select>";
 }

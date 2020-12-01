@@ -132,7 +132,7 @@ include "../functions/funcoes.php";
 		</fieldset>
 	</form>
 	<script>
-		$("#estados").on("click",function(){
+		$("#estados").on("change",function(){
 			var idEstado = $("#estados").val();
 			$.ajax({
 				url: 'pega_cidades.php',
@@ -153,7 +153,7 @@ include "../functions/funcoes.php";
 			});
 		});
 
-		$("#cidades").on("click",function(){
+		$("#cidades").on("change",function(){
 			var idCidade = $("#cidades").val();
 			$.ajax({
 				url: 'pega_bairros.php',
