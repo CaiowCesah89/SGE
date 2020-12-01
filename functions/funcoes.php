@@ -12,6 +12,17 @@ function MontaSelectEstados(){
 	echo "</select>";
 }
 
+function MontaSelectFabricantes(){
+	echo "<select class='layout' name='carfabcodigo' id='carfabcodigo'>";
+	echo "<option>Selecione</option>";
+	$sql = "select * from fabricantes";
+	$query = mysqli_query(pegarConexao(),$sql);
+	while ($vetorfabricantes = mysqli_fetch_array($query)){
+		echo "<option value='". $vetorfabricantes['fabcodigo']."'>".$vetorfabricantes['fabnome']."";
+	}
+	echo "</select>";
+}
+
 function exibeLogin(){
 	echo "<td><div class='div2'>Bem-Vindo: ".$_SESSION['nome']."</div></td>";
 }

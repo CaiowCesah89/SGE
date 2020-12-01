@@ -26,6 +26,10 @@ usulogin varchar(20) not null UNIQUE,
 ususenha varchar(255) not null,
 usustatus varchar(7) not null);
 
+create table modalidades(
+modcodigo int primary key auto_increment,
+moddescricao varchar(10) not null);
+
 create table funcionarios(
 funcodigo int primary key AUTO_INCREMENT,
 funnome varchar(100) not null,
@@ -9554,3 +9558,5 @@ insert into bairros(baidescricao, baicidcodigo) values ('Adrianópolis', 236),
 
 insert into usuarios(usulogin, ususenha, usustatus) values('adm', '$2y$10$QLdULmjPKkvuX5rZHY6W0uzinV9X68g0LdEeglOF0WqdydAXV.kZ6', 'Ativo');
 insert into funcionarios(funnome, funcpf, fundtnascimento, funestcodigo, funcidcodigo, funbaicodigo, funendereco, funsexo, funstatus, funusucodigo) values('Administrador', '123.456.789-10', '1111-11-11', 3, 236, 42, 'Rua 1 Nº1', 'Masculino', 'Ativo', 1);
+
+insert into modalidades(moddescricao) values('Diária'), ('Mensal'), ('Valor Hora');
