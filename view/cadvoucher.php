@@ -2,9 +2,7 @@
 include "../functions/funcoes.php";
 
 function pegaDataHora(){
-	if(isset($_POST['btsalvar'])){
-		echo $today = date("Y-m-d H:i:s");
-	}
+	echo $today = date("Y-m-d H:i:s");
 }
 ?>
 <!DOCTYPE html>
@@ -20,75 +18,67 @@ function pegaDataHora(){
 	<?php 
 	require_once "../view/cabecalho.php";
 	?>
-	<form class="form" name="clock" method="post" action="?acao=btsalvar" accept-charset="utf-8">
+	<form class="form" name="clock" method="POST" action="../controller/controller_cadvoucher.php" accept-charset="utf-8">
 		<fieldset>
 			<table border="0">
 				<legend>Registro de Entrada de Veículos</legend>	
 				<tbody>
-					<tr>					
+					<tr>
 						<td><label>DATA/HORA ENTRADA:</label></td>
-						<td colspan="2"><input class="inputhora" type="text" name="dthrentrada"
-							value="<?php pegaDataHora(); ?>" disabled></td>
-							<td><label>HORA:<input class="inputrelogio" type="text" name="face" disabled></label></td>
-						</tr>
-						<tr>
-							<td><label>CLIENTE:</label></td>
-							<td><input class="input" type="text" name="txtnomecliente" autofocus autocomplete="off" maxlength="100"></td>
-						</tr>
-						<tr>
-							<td><label>VEÍCULO:</label></td>
-							<td>
-								<?php 
-								MontaSelectVeiculos();
-								?>
-							</td>
-						</tr>
-						<tr>
-							<td><label>MODALIDADE:</label></td>
-							<td>
-								<?php 
-								MontaSelectModalidades();
-								?>
-							</td>
-						</tr>					
-						<tr>
-							<td><label>PLACA:</label></td>
-							<td><input class="inputplaca" type="text" name="txtplaca" autocomplete="off" maxlength="8" onkeyup="FormataPlaca(this,event)"></td>
-						</tr>
-						<tr>
-							<td><label>FORMA DE PAGAMENTO:</label></td>
-							<td>
-								<input type='radio' name='txtformapagamento' id='formapagamento' value='Dinheiro' checked>Dinheiro
-								<input type='radio' name='txtformapagamento' id='formapagamento' value='Cartao'>Cartão
-							</td>
-						</tr>
-						<tr align="right">
-							<td colspan="4">
-								<input class="submit" type="submit" name="btsalvar" value="SALVAR">
-								<input class="submit" type="button" name="btvoltar" value="VOLTAR" onclick="location='http:../view/home.php';">
-								<input class="submit" type="reset" name="reset" value="LIMPAR">
-							</td>
-						</tr>					
-					</tbody>			
-				</table>
-			</fieldset>
-		</form>
-		<script>
-			function showtime()
-			{ setTimeout("showtime();",1000);
-			callerdate.setTime(callerdate.getTime()+1000);
-			var hh = String(callerdate.getHours());
-			var mm = String(callerdate.getMinutes());
-			var ss = String(callerdate.getSeconds());
-			document.clock.face.value =
-			((hh < 10) ? " " : "") + hh +
-			((mm < 10) ? ":0" : ":") + mm +
-			((ss < 10) ? ":0" : ":") + ss;
-		}
-		callerdate=new Date(<?php echo date("Y,m,d,H,i,s");?>);
-	</script>
-	<?php 
-	require_once "../view/rodape.php";
-	?>
+						<td><input class="inputhora" type="text" name="entrada" value="<?php pegaDataHora(); ?>" autocomplete="off" disabled></td>
+						<td><label>HORA ATUAL:<input class="inputrelogio" type="text" name="txtface" disabled></label></td>
+					</tr>
+					<tr>
+						<td><label>CLIENTE:</label></td>
+						<td><input class="input" type="text" name="txtnomecliente" autofocus autocomplete="off" maxlength="100"></td>
+					</tr>
+					<tr>
+						<td><label>VEÍCULO:</label></td>
+						<td><?php MontaSelectVeiculos(); ?></td>
+					</tr>
+					<tr>
+						<td><label>MODALIDADE:</label></td>
+						<td><?php MontaSelectModalidades(); ?></td>
+					</tr>					
+					<tr>
+						<td><label>PLACA:</label></td>
+						<td><input class="inputplaca" type="text" name="txtplaca" autocomplete="off" maxlength="8" onkeyup="FormataPlaca(this,event)"></td>
+					</tr>
+					<tr>
+						<td><label>FORMA DE PAGAMENTO:</label></td>
+						<td>
+							<input type='radio' name='txtformapagamento' id='formapagamento' value='Dinheiro' checked>Dinheiro
+							<input type='radio' name='txtformapagamento' id='formapagamento' value='Cartao'>Cartão
+						</td>
+					</tr>
+					<tr align="right">
+						<td colspan="4">
+							<input class="submit" type="submit" name="btsalvar" value="SALVAR">
+							<input class="submit" type="button" name="btvoltar" value="VOLTAR" onclick="location='http:../view/home.php';">
+							<input class="submit" type="reset" name="reset" value="LIMPAR">
+							<input type="hidden" name="txtlogin" value="<?php echo $_SESSION['codigo']; ?>">
+						</td>
+					</tr>					
+				</tbody>			
+			</table>
+		</fieldset>
+	</form>
+	<script>
+		function showtime()
+		{ setTimeout("showtime();",1000);
+		callerdate.setTime(callerdate.getTime()+1000);
+		var hh = String(callerdate.getHours());
+		var mm = String(callerdate.getMinutes());
+		var ss = String(callerdate.getSeconds());
+		document.clock.txtface.value =
+		((hh < 10) ? " " : "") + hh +
+		((mm < 10) ? ":0" : ":") + mm +
+		((ss < 10) ? ":0" : ":") + ss;
+	}
+	callerdate=new Date(<?php echo date("Y,m,d,H,i,s");?>);
+</script>
+<?php 
+require_once "../view/rodape.php";
+?>
 </body>
 </html>

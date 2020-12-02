@@ -67,16 +67,16 @@ foreign key (carfabcodigo) references fabricantes(fabcodigo) on delete no action
 create table vouchers(
 voufuncodigo int not null,
 voucarcodigo int not null,
+vounomecliente varchar(100) not null,
 vouplaca varchar(7) not null,
 voudthrentrada datetime not null,
-voudthrsaida datetime not null,
+voudthrsaida datetime,
 vouprecodigo int not null,
+vouformapagamento varchar(10),
 voustatus varchar(10) not null,
 foreign key (voufuncodigo) references funcionarios(funcodigo) on delete no action on update no action,
 foreign key (voucarcodigo) references carros(carcodigo) on delete no action on update no action,
 foreign key (vouprecodigo) references precos(precodigo) on delete no action on update no action);
-
-
 
 INSERT INTO estados VALUES (1, 'Acre', 'AC'),
 (2, 'Alagoas', 'AL'),

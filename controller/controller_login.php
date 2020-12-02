@@ -22,6 +22,7 @@ if ($linhas>0) {
 		$nome= $vetorusuario[4];
 		$sexo= $vetorusuario[5];
 	}
+	$_SESSION['codigo']=$id;
 	$_SESSION['senha']=$senha_db;
 	$_SESSION['status']=$status;
 	$_SESSION['nome']=$nome;
