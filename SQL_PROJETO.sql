@@ -28,7 +28,8 @@ usustatus varchar(7) not null);
 
 create table modalidades(
 modcodigo int primary key auto_increment,
-moddescricao varchar(10) not null);
+moddescricao varchar(10) not null,
+modpreco double not null);
 
 create table funcionarios(
 funcodigo int primary key AUTO_INCREMENT,
@@ -54,7 +55,8 @@ prevalor double not null);
 
 create table fabricantes(
 fabcodigo int primary key AUTO_INCREMENT,
-fabdescricao varchar(20) not null);
+fabrazaosocial varchar(100) not null,
+fabnomefantasia varchar(100) not null);
 
 create table carros(
 carcodigo int primary key AUTO_INCREMENT,
@@ -9559,4 +9561,4 @@ insert into bairros(baidescricao, baicidcodigo) values ('Adrianópolis', 236),
 insert into usuarios(usulogin, ususenha, usustatus) values('adm', '$2y$10$QLdULmjPKkvuX5rZHY6W0uzinV9X68g0LdEeglOF0WqdydAXV.kZ6', 'Ativo');
 insert into funcionarios(funnome, funcpf, fundtnascimento, funestcodigo, funcidcodigo, funbaicodigo, funendereco, funsexo, funstatus, funusucodigo) values('Administrador', '123.456.789-10', '1111-11-11', 3, 236, 42, 'Rua 1 Nº1', 'Masculino', 'Ativo', 1);
 
-insert into modalidades(moddescricao) values('Diária'), ('Mensal'), ('Valor Hora');
+insert into modalidades(moddescricao, modpreco) values('Diária',24.00), ('Mensal', 300.00), ('Valor Hora', 1.00);

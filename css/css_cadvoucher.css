@@ -1,0 +1,91 @@
+body{
+	font-family: "Comic Sans MS";
+}
+.form{
+	margin: 70px 310px 0px;
+}
+
+fieldset{
+	border-radius: 10px;
+	background-color: #dfdddd;
+	box-shadow: 7px 7px 7px #111;
+}
+
+legend{
+	font-size:25px;
+}
+
+label{
+	float: right;
+}
+
+.input{
+	width: 350px;
+	font-family: "Comic Sans MS";
+	font-size: 15px;
+	border-radius: 10px;
+	background: none;
+}
+
+.input:hover{
+	box-shadow: 5px 5px 5px #111;
+	border-radius: 10px;
+}
+
+.inputhora{
+	width: 150px;
+	font-family: "Comic Sans MS";
+	font-size: 15px;
+	border-radius: 10px;
+	background: none;
+}
+
+.inputrelogio{
+	width: 65px;
+	font-family: "Comic Sans MS";
+	font-size: 15px;
+	border: none;
+	background: none;
+}
+
+.inputcarro{
+	width: 190px;
+	font-family: "Comic Sans MS";
+	font-size: 15px;
+	border-radius: 10px;
+	background: none;
+}
+
+.inputcarro:hover{
+	box-shadow: 5px 5px 5px #111;
+}
+
+.inputplaca{
+	width: 80px;
+	font-family: "Comic Sans MS";
+	font-size: 15px;
+	border-radius: 10px;
+	background: none;
+}
+
+.inputplaca:hover{
+	box-shadow: 5px 5px 5px #111;
+}
+
+.submit{
+	color: #7a91c1;
+	font-family: "Comic Sans MS";
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: center;
+	border-radius: 8px;
+	height: 30px;
+	box-shadow: 5px 5px 5px;
+}
+
+.submit:hover{
+
+	background-color: #7a91c1;
+	color: white;
+	box-shadow: 5px 5px 5px;
+}

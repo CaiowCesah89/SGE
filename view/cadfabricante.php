@@ -20,11 +20,11 @@ include "../functions/funcoes.php";
 				<form class="form" method="post" action="../controller/controller_cadfabricante.php">
 					<div class="input">
 						<label>Nome da Fabricante:</label>
-						<input class="layout" type="text" name="fabnome" autofocus>	
+						<input class="layout" type="text" name="razaosocial" autofocus>	
 					</div>
 					<div class="input">
 						<label>Descrição da Fabricante:</label>
-						<input class="layout" type="text" name="fabdescricao">	
+						<input class="layout" type="text" name="nomefantasia">	
 					</div>
 					<div class="submit">
 						<input class="submitlayout" type="submit" name="btsalvar" value="SALVAR">

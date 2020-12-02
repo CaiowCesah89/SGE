@@ -19,7 +19,7 @@ require_once "../controller/controller_verifica_sessao.php";
                             <li><a href="http:../view/cadfabricante.php">Fabricante</a></li>
                             <li><a href="../view/cadcarros.php">Carro</a></li>
                             <li><a href="http:../view/cadfuncionario.php">Funcionário</a></li>
-                            <li><a href="#">Voucher</a></li>
+                            <li><a href="http:../view/cadvoucher.php">Voucher</a></li>
                         </ul>
                     </li>
                     <li><a>Editar</a>

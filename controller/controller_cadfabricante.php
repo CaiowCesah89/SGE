@@ -2,16 +2,18 @@
 require_once "../conexao/conexao.php";
 include "../functions/funcoes.php";
 
-$fabnome 			= $_POST['fabnome'];
-$fabdescricao		= $_POST['fabdescricao'];
+$razaosocial = $_POST['razaosocial'];
+$nomefantasia = $_POST['nomefantasia'];
 
-$result = "INSERT INTO fabricantes (fabnome, fabdescricao) VALUES ('$fabnome','$fabdescricao')";
-mysqli_query($conexao, $result);
+$sql = "INSERT INTO fabricantes (fabrazaosocial, fabnomefantasia) VALUES ('$razaosocial', '$nomefantasia');";
+$resultado = mysqli_query($conexao, $sql);
+$linhas = mysqli_affected_rows($conexao);
 
-if(mysql_insert_id($conexao)){
-	header('Location: ../view/cadfabricante.php');
+if($linhas > 0){
+	echo "<script> alert('Fabricante salvo com sucesso!');</script>";
+	header("refresh: 0; url=http:../view/home.php");
 }else{
-	header('Location: ../view/cadfabricante.php');
+	echo "<script> alert('Operação não realizada, o fabricante não foi adicionado ao banco de dados.');</script>";
+	header("refresh: 0; url=http:../view/cadfabricante.php");
 }
-
 ?>

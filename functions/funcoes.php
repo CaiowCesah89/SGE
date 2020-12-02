@@ -18,7 +18,29 @@ function MontaSelectFabricantes(){
 	$sql = "select * from fabricantes";
 	$query = mysqli_query(pegarConexao(),$sql);
 	while ($vetorfabricantes = mysqli_fetch_array($query)){
-		echo "<option value='". $vetorfabricantes['fabcodigo']."'>".$vetorfabricantes['fabnome']." </option>";
+		echo "<option value='". $vetorfabricantes['fabcodigo']."'>".$vetorfabricantes['fabnomefantasia']." </option>";
+	}
+	echo "</select>";
+}
+
+function MontaSelectVeiculos(){
+	echo "<select class='inputcarro' name='veiculos' id='veiculos'>";
+	echo "<option>Selecione</option>";
+	$sql = "select * from carros;";
+	$query = mysqli_query(pegarConexao(),$sql);
+	while ($vetorcarros = mysqli_fetch_array($query)){
+		echo "<option value='". $vetorcarros['carcodigo']."'>".$vetorcarros['carmodelo']." </option>";
+	}
+	echo "</select>";
+}
+
+function MontaSelectModalidades(){
+	echo "<select class='inputcarro' name='modalidades' id='modalidades'>";
+	echo "<option>Selecione</option>";
+	$sql = "select * from modalidades;";
+	$query = mysqli_query(pegarConexao(),$sql);
+	while ($vetormodalidades = mysqli_fetch_array($query)){
+		echo "<option value='". $vetormodalidades['modcodigo']."'>".$vetormodalidades['moddescricao']." </option>";
 	}
 	echo "</select>";
 }
