@@ -2,10 +2,8 @@ body{
 	font-family: "Comic Sans MS";
 }
 
-
 fieldset{
 	display:flex;
-	
 	width: 50%;
 	height: 50%;
 	margin: 100px auto;
@@ -26,14 +24,11 @@ legend{
 	background: none;
 }
 
-
-
 .submit{
 	
 	margin-top: 100px;
 	margin-bottom: 10px;
-	margin-left: 33%;
-	
+	margin-left: 33%;	
 	
 }
 .submitlayout{
