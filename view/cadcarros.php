@@ -18,11 +18,11 @@ include "../functions/funcoes.php";
 	<fieldset>
 				<legend>Cadastro de Carros</legend>	
 				<form class="form" method="post" action="../controller/controller_cadcarros.php">
-					<div class="input">
+					<div>
 						<label>Modelo do Carro:</label>
-						<input class="layout" type="text" name="carmodelo" autofocus>	
+						<input class="input" type="text" name="carmodelo" autocomplete="off" autofocus required>	
 					</div>
-					<div class="input">
+					<div>
 						<label>Fabricante:</label>
 						<?php
 						MontaSelectFabricantes();

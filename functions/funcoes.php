@@ -2,7 +2,7 @@
 include_once "../conexao/conexao.php";
 
 function MontaSelectEstados(){
-	echo "<select class='inputestado' name='txtestados' id='estados'>";
+	echo "<select class='inputestado' name='txtestados' id='estados' required>";
 	echo "<option>Selecione</option>";
 	$sql = "select * from estados";
 	$query = mysqli_query(pegarConexao(),$sql);
@@ -13,7 +13,7 @@ function MontaSelectEstados(){
 }
 
 function MontaSelectFabricantes(){
-	echo "<select class='layout' name='carfabcodigo' id='carfabcodigo'>";
+	echo "<select class='select' name='carfabcodigo' id='carfabcodigo'>";
 	echo "<option>Selecione</option>";
 	$sql = "select * from fabricantes";
 	$query = mysqli_query(pegarConexao(),$sql);
@@ -37,10 +37,10 @@ function MontaSelectVeiculos(){
 function MontaSelectModalidades(){
 	echo "<select class='inputcarro' name='modalidades' id='modalidades'>";
 	echo "<option>Selecione</option>";
-	$sql = "select * from modalidades;";
+	$sql = "select * from precos;";
 	$query = mysqli_query(pegarConexao(),$sql);
 	while ($vetormodalidades = mysqli_fetch_array($query)){
-		echo "<option value='". $vetormodalidades['modcodigo']."'>".$vetormodalidades['moddescricao']." </option>";
+		echo "<option value='". $vetormodalidades['precodigo']."'>".$vetormodalidades['predescricao']." </option>";
 	}
 	echo "</select>";
 }
@@ -199,5 +199,70 @@ function RecuperaSelectBairrosByCodigo($baicodigo){
 		}
 	}
 	echo "</select>";
+}
+
+function pesquisaTodosVouchers(){
+	$sql = "select voucodigo, vounomecliente, carmodelo, vouplaca, predescricao, voudthrentrada from vouchers
+	 inner join carros on voucarcodigo = carcodigo
+	  inner join precos on vouprecodigo = precodigo
+	   where voustatus = 'Aberto'
+	    order by voudthrentrada;";
+	$query = mysqli_query(pegarConexao(),$sql);
+	while ($dados = mysqli_fetch_array($query)){
+		$voucodigo = $dados['voucodigo'];
+		$vounomecliente = $dados['vounomecliente'];
+		$cardescricao = $dados['carmodelo'];
+		$vouplaca = $dados['vouplaca'];
+		$predescricao = $dados['predescricao'];
+		$voudthrentrada = $dados['voudthrentrada'];
+
+			echo ("<tr>
+				<td class='td'>".$voucodigo."</td>
+				<td class='td'>".$vounomecliente."</td>
+				<td class='td'>".$cardescricao."</td>
+				<td class='td'>".$vouplaca."</td>
+				<td class='td'>".$predescricao."</td>
+				<td class='td'>".$voudthrentrada."</td>
+
+				<form action='' method='POST'>
+				<td class='td'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$voucodigo."'><img src='../imagens/bt_editar.png' title='Editar dados do voucher' name='Alterar' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$voucodigo."'><img src='../imagens/bt_dropar.png' title='Excluir voucher do sistema' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_desativarusuario.php?funcodigo=".$voucodigo."'><a href='../controller/controller_ativarusuario.php?funcodigo=".$voucodigo."'><img src='../imagens/bt_ativar.png' title='Finalizar voucher' border='0'></a></td>
+				</tr>");
+	}
+}
+
+
+function pesquisaVoucherByLikeNomePlaca($nome){
+	$sql = "select voucodigo, vounomecliente, carmodelo, vouplaca, predescricao, voudthrentrada from vouchers
+	inner join carros on voucarcodigo = carcodigo
+	 inner join precos on vouprecodigo = precodigo
+	  where vounomecliente like '%$nome%' and voustatus = 'Aberto'
+	   or vouplaca like '%$nome%' and voustatus = 'Aberto'
+	    order by voudthrentrada;";
+
+	$query = mysqli_query(pegarConexao(),$sql);
+	while ($dados = mysqli_fetch_array($query)){
+		$voucodigo = $dados['voucodigo'];
+		$vounomecliente = $dados['vounomecliente'];
+		$cardescricao = $dados['carmodelo'];
+		$vouplaca = $dados['vouplaca'];
+		$predescricao = $dados['predescricao'];
+		$voudthrentrada = $dados['voudthrentrada'];
+
+			echo ("<tr>
+				<td class='td'>".$voucodigo."</td>
+				<td class='td'>".$vounomecliente."</td>
+				<td class='td'>".$cardescricao."</td>
+				<td class='td'>".$vouplaca."</td>
+				<td class='td'>".$predescricao."</td>
+				<td class='td'>".$voudthrentrada."</td>
+
+				<form action='' method='POST'>
+				<td class='td'><a href='../view/alterarfuncionario.php?acao=Alterar&codigoAlterar=".$voucodigo."'><img src='../imagens/bt_editar.png' title='Editar dados do voucher' name='Alterar' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_dropfuncionario.php?funcodigo=".$voucodigo."'><img src='../imagens/bt_dropar.png' title='Excluir voucher do sistema' border='0'></a></td>
+				<td class='td'><a href='../controller/controller_desativarusuario.php?funcodigo=".$voucodigo."'><a href='../controller/controller_ativarusuario.php?funcodigo=".$voucodigo."'><img src='../imagens/bt_ativar.png' title='Finalizar voucher' border='0'></a></td>
+				</tr>");
+	}
 }
 ?>

@@ -11,9 +11,9 @@ $placa = $_POST['txtplaca'];
 $tipopagamento = $_POST['txtformapagamento'];
 
 
-if($entrada == "" || $cliente == "" || $veiculos == "" || $modalidade == "" || $placa == ""){
-	echo "<script> alert('Não pode haver campos em branco.\n Você será redirecionado para a mesma página.');</script>";
-	//header("refresh: 0; url=http:../view/cadvoucher.php");
+if($entrada == "" || $cliente == "" || $veiculo == "Selecione" || $modalidade == "Selecione" || $placa == ""){
+	echo "<script> alert('Não pode haver campos em branco!');</script>";
+	header("refresh: 0; url=http:../view/cadvoucher.php");
 }else{
 
 	$sql= "select * from vouchers where vouplaca='$placa' and voustatus = 'Aberto';";
@@ -21,20 +21,21 @@ if($entrada == "" || $cliente == "" || $veiculos == "" || $modalidade == "" || $
 	$linhas= mysqli_affected_rows($conexao);
 
 	if ($linhas>0) {
-		echo "<script> alert('O vaículo informado já está estacionado no pátio!');</script>";
-		//header("refresh: 0; url=http:../view/cadvoucher.php");
+		echo "<script> alert('O veículo informado já está estacionado no pátio!');</script>";
+		header("refresh: 0; url=http:../view/listarvouchers.php");
 	}else{
-		$sql1= "insert into vouchers(voufuncodigo, vounomecliente, voucarcodigo, vouplaca, voudthrentrada, vouprecodigo, voustatus) values($codigologin, '$cliente', $veiculo, '$placa', '$entrada', $modalidade, 'Aberto');";
-		$resultado1 = mysqli_query($conexao,$sql);
+		$sql1= "insert into vouchers(voufuncodigo, voucarcodigo, vounomecliente, vouplaca, voudthrentrada, vouprecodigo, vouformapagamento, voustatus)
+		 values($codigologin, $veiculo, '$cliente', '$placa', '$entrada', $modalidade, '$tipopagamento', 'Aberto');";
+		$resultado1 = mysqli_query($conexao,$sql1);
 		$linhas1 = mysqli_affected_rows($conexao);
 
 		if($sql1){
 			$_SESSION['mensagem'] = "gravadocomsucesso";
 			echo "<script> alert('Salvo com sucesso!');</script>";
-			//header("refresh: 0; url=http:../view/listarvouchers.php");
+			header("refresh: 0; url=http:../view/listarvouchers.php");
 		}else{
-			echo "<script> alert('O vaículo informado já está no pátio!');</script>";
-			//header("refresh: 0; url=http:../view/cadvoucher.php");
+			echo "<script> alert('Não foi possível cadastrar o voucher!');</script>";
+			header("refresh: 0; url=http:../view/cadvoucher.php");
 		}
 	}
 }

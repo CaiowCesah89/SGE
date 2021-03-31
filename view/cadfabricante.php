@@ -18,23 +18,21 @@ include "../functions/funcoes.php";
 		<fieldset >
 				<legend>Cadastro de Fabricantes</legend>
 				<form class="form" method="post" action="../controller/controller_cadfabricante.php">
-					<div class="input">
+					<div>
 						<label>Nome da Fabricante:</label>
-						<input class="layout" type="text" name="razaosocial" autofocus>	
+						<input class="input" type="text" name="razaosocial" autocomplete="off" required autofocus>	
 					</div>
-					<div class="input">
+					<div>
 						<label>Descrição da Fabricante:</label>
-						<input class="layout" type="text" name="nomefantasia">	
+						<input class="input" type="text" name="nomefantasia" autocomplete="off" required>	
 					</div>
 					<div class="submit">
 						<input class="submitlayout" type="submit" name="btsalvar" value="SALVAR">
 						<input class="submitlayout" type="button" name="btvoltar" value="VOLTAR" onclick="location='http:../view/home.php';">
 						<input class="submitlayout" type="reset" name="reset" value="LIMPAR">
 					</div>
-				</form>	
-				
+				</form>
 		</fieldset>
-	
 	<?php 
 	require_once "../view/rodape.php";
 	?>

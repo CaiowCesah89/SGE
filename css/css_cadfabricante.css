@@ -4,9 +4,10 @@ body{
 
 fieldset{
 	display:flex;
-	width: 50%;
-	height: 50%;
-	margin: 100px auto;
+	width: 35%;
+	height: 35%;
+	margin-top: 5%;
+	margin-left: 30%;
 	border-radius: 10px;
 	background-color: #dfdddd;
 	box-shadow: 7px 7px 7px #111;
@@ -17,7 +18,7 @@ legend{
 }
 
 .input{
-	margin: 5px 40px 30px;
+	margin: 10px 10px 10px;
 	font-family: "Comic Sans MS";
 	font-size: 15px;
 	border-radius: 10px;
@@ -25,16 +26,14 @@ legend{
 }
 
 .submit{
-	
-	margin-top: 100px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: 33%;	
-	
 }
+
 .submitlayout{
-	margin-top: 100px;
+	margin-top: 10px;
 	margin-bottom: 10px;
-	margin-left: 33%;
 	height: 30px;
 	margin: 3px;
 	border-radius: 8px;
@@ -48,16 +47,4 @@ legend{
 	background-color: #7a91c1;
 	color: white;
 	box-shadow: 5px 5px 5px;
-}
-
-.layout{
-	width: 300px;
-	display: inline;
-	float: right;
-	margin-left: 30px;
-}
-
-.form{
-	margin: 20px;
-	padding: 20px;
 }

@@ -13,7 +13,8 @@ $sexo 			= $_POST['txtsexo'];
 $login 			= $_POST['txtlogin'];
 $senha 			= $_POST['txtsenha'];
 
-if($nome == " " || $cpf == "" || $dtnascimento == "" || empty($estado) || empty($cidade) || empty($bairro) || $endereco == "" || $sexo == "" || $login == "" || $senha == ""){
+
+if($nome == "" || $cpf == "" || $dtnascimento == "" || $estado == "Selecione" || $cidade == "Selecione" || $bairro == "Selecione" || $endereco == "" || $sexo == "" || $login == "" || $senha == ""){
 	echo "<script> alert('Não pode haver campos em branco.\n Você será redirecionado para a mesma página.');</script>";
 	header("refresh: 0; url=http:../view/cadfuncionario.php");
 }else{

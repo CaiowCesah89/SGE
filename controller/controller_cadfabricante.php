@@ -11,7 +11,7 @@ $linhas = mysqli_affected_rows($conexao);
 
 if($linhas > 0){
 	echo "<script> alert('Fabricante salvo com sucesso!');</script>";
-	header("refresh: 0; url=http:../view/home.php");
+	header("refresh: 0; url=http:../view/cadfabricante.php");
 }else{
 	echo "<script> alert('Operação não realizada, o fabricante não foi adicionado ao banco de dados.');</script>";
 	header("refresh: 0; url=http:../view/cadfabricante.php");

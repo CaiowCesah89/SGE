@@ -25,15 +25,15 @@ include "../functions/funcoes.php";
 				<tbody>
 					<tr>
 						<td><label class="label">NOME:</label></td>
-						<td><input class="input" type="text" name="txtnome" autocomplete="off" autofocus placeholder="Informe seu nome completo." maxlength="100"></td>
+						<td><input class="input" type="text" name="txtnome" autocomplete="off" autofocus placeholder="Informe seu nome completo." maxlength="100" required></td>
 					</tr>
 					<tr>
 						<td><label>CPF:</label></td>
-						<td><input class="inputcpf" type="text" name="txtcpf" autocomplete="off" size="30" maxlength="14" placeholder="Informe seu cpf" onkeyup="FormataCpf(this,event)"></td>
+						<td><input class="inputcpf" type="text" name="txtcpf" autocomplete="off" size="30" maxlength="14" placeholder="Informe seu cpf" onkeyup="FormataCpf(this,event)" required></td>
 					</tr>
 					<tr>
 						<td><label>DATA DE NASCIMENTO:</label></td>
-						<td><input class="inputdata" type="date" name="txtdtnascimento" autocomplete="off" maxlength="10"></td>
+						<td><input class="inputdata" type="date" name="txtdtnascimento" autocomplete="off" maxlength="10" required></td>
 					</tr>
 					<tr>
 						<td><label>ESTADO:</label></td>
@@ -57,7 +57,7 @@ include "../functions/funcoes.php";
 					</tr>
 					<tr>
 						<td><label>ENDEREÇO:</label></td>
-						<td><input class="input" type="text" name="txtendereco" autocomplete="off" maxlength="100" placeholder="informe seu endereço aqui"></td>
+						<td><input class="input" type="text" name="txtendereco" autocomplete="off" maxlength="100" placeholder="informe seu endereço aqui" required></td>
 					</tr>
 					<tr>
 						<td><label>SEXO:</label></td>
@@ -69,11 +69,11 @@ include "../functions/funcoes.php";
 					</tr>
 					<tr>
 						<td><label>LOGIN:</label></td>
-						<td><input class="input" type="text" name="txtlogin" placeholder="informe seu login aqui" autocomplete="off" maxlength="20"></td>
+						<td><input class="input" type="text" name="txtlogin" placeholder="informe seu login aqui" autocomplete="off" maxlength="20" required></td>
 					</tr>
 					<tr>
 						<td><label>SENHA:</label></td>
-						<td><input class="input" type="password" name="txtsenha" placeholder="informe a sua senha aqui"></td>
+						<td><input class="input" type="password" name="txtsenha" placeholder="informe a sua senha aqui" required></td>
 					</tr>
 					<tr>
 						<td colspan="2" align="center">

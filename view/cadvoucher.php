@@ -25,12 +25,12 @@ function pegaDataHora(){
 				<tbody>
 					<tr>
 						<td><label>DATA/HORA ENTRADA:</label></td>
-						<td><input class="inputhora" type="text" name="entrada" value="<?php pegaDataHora(); ?>" autocomplete="off" disabled></td>
+						<td><input class="inputhora" type="text" name="entrada" value="<?php pegaDataHora(); ?>" autocomplete="off" readonly></td>
 						<td><label>HORA ATUAL:<input class="inputrelogio" type="text" name="txthora" disabled></label></td>
 					</tr>
 					<tr>
 						<td><label>CLIENTE:</label></td>
-						<td><input class="input" type="text" name="txtnomecliente" autofocus autocomplete="off" maxlength="100"></td>
+						<td><input class="input" type="text" name="txtnomecliente" autofocus autocomplete="off" maxlength="100" required></td>
 					</tr>
 					<tr>
 						<td><label>VEÍCULO:</label></td>
@@ -42,7 +42,7 @@ function pegaDataHora(){
 					</tr>					
 					<tr>
 						<td><label>PLACA:</label></td>
-						<td><input class="inputplaca" type="text" name="txtplaca" autocomplete="off" maxlength="8" onkeyup="FormataPlaca(this,event)"></td>
+						<td><input class="inputplaca" type="text" name="txtplaca" autocomplete="off" maxlength="8" onkeyup="FormataPlaca(this,event)" required></td>
 					</tr>
 					<tr>
 						<td><label>FORMA DE PAGAMENTO:</label></td>

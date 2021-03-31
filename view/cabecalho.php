@@ -27,7 +27,7 @@ require_once "../controller/controller_verifica_sessao.php";
                             <li><a href="#">Fabricante</a></li>
                             <li><a href="#">Carro</a></li>
                             <li><a href="http:../view/listarfuncionarios.php">Funcionário</a></li>
-                            <li><a href="#">Voucher</a></li>
+                            <li><a href="http:../view/listarvouchers.php">Voucher</a></li>
                         </ul>
                     </li>
                 </ul>

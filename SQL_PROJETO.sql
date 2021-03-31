@@ -65,10 +65,11 @@ carfabcodigo int not null,
 foreign key (carfabcodigo) references fabricantes(fabcodigo) on delete no action on update no action);
 
 create table vouchers(
+voucodigo int primary key AUTO_INCREMENT,
 voufuncodigo int not null,
 voucarcodigo int not null,
 vounomecliente varchar(100) not null,
-vouplaca varchar(7) not null,
+vouplaca varchar(8) not null,
 voudthrentrada datetime not null,
 voudthrsaida datetime,
 vouprecodigo int not null,
@@ -9561,4 +9562,4 @@ insert into bairros(baidescricao, baicidcodigo) values ('Adrianópolis', 236),
 insert into usuarios(usulogin, ususenha, usustatus) values('adm', '$2y$10$QLdULmjPKkvuX5rZHY6W0uzinV9X68g0LdEeglOF0WqdydAXV.kZ6', 'Ativo');
 insert into funcionarios(funnome, funcpf, fundtnascimento, funestcodigo, funcidcodigo, funbaicodigo, funendereco, funsexo, funstatus, funusucodigo) values('Administrador', '123.456.789-10', '1111-11-11', 3, 236, 42, 'Rua 1 Nº1', 'Masculino', 'Ativo', 1);
 
-insert into modalidades(moddescricao, modpreco) values('Diária',24.00), ('Mensal', 300.00), ('Valor Hora', 1.00);
+insert into precos(predescricao, prevalor) values('Diária',24.00), ('Mensal', 300.00), ('Valor Hora', 1.00);
