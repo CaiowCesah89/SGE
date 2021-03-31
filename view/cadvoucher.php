@@ -26,7 +26,7 @@ function pegaDataHora(){
 					<tr>
 						<td><label>DATA/HORA ENTRADA:</label></td>
 						<td><input class="inputhora" type="text" name="entrada" value="<?php pegaDataHora(); ?>" autocomplete="off" disabled></td>
-						<td><label>HORA ATUAL:<input class="inputrelogio" type="text" name="txtface" disabled></label></td>
+						<td><label>HORA ATUAL:<input class="inputrelogio" type="text" name="txthora" disabled></label></td>
 					</tr>
 					<tr>
 						<td><label>CLIENTE:</label></td>
@@ -70,7 +70,7 @@ function pegaDataHora(){
 		var hh = String(callerdate.getHours());
 		var mm = String(callerdate.getMinutes());
 		var ss = String(callerdate.getSeconds());
-		document.clock.txtface.value =
+		document.clock.txthora.value =
 		((hh < 10) ? " " : "") + hh +
 		((mm < 10) ? ":0" : ":") + mm +
 		((ss < 10) ? ":0" : ":") + ss;
