@@ -51,7 +51,7 @@ function exibeLogin(){
 
 function verificaSexo(){
 	if($_SESSION['sexo']== 'Masculino'){
-		echo "<td><img src='../imagens/avatar_m_livre.png' alt='Image' height='100' width='100'></td>";
+		echo "<td><img src='../imagens/avatar_m_livre.png' alt='Image' height='100' width='100' title=".$_SESSION['nome']."></td>";
 	}else if($_SESSION['sexo']== 'Feminino'){
 		echo "<td><img src='../imagens/avatar_f_livre.png' alt='Image' height='100' width='100'></td>";
 	}else{

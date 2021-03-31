@@ -33,7 +33,7 @@ require_once "../controller/controller_verifica_sessao.php";
                 </ul>
             </li>
             <li><a>Relatórios</a></li>
-            <li align="right"><a href="http:../view/home.php">Home</a></li>
+            <li><a href="http:../view/home.php">Home</a></li>
             <li><a href="../controller/controller_logout.php">Sair</a></li>
         </ul>
     </div>
